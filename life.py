@@ -8,7 +8,8 @@ def is_neighbor(cell1, cell2):
 
 def get_neighbors(cell):
 	return {Cell(x,y) for x in xrange(cell.x-1,cell.x+2) 
-	                  for y in xrange(cell.y-1,cell.y+2) if Cell(x,y) != cell}.difference(set([cell]))
+	                  for y in xrange(cell.y-1,cell.y+2)
+	                  }.difference(set([cell]))
 
 def play(world):
 	survivors = {cell for cell in world if cell_should_live(cell, world)}
